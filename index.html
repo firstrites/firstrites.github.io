@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritesh Ranjan - Product Leader</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Header Section */
+        .header {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 80px;
+            padding-bottom: 60px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .header-content h1 {
+            font-size: 48px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+
+        .header-content .tagline {
+            font-size: 18px;
+            color: #0066cc;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .header-content .location {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .photo-placeholder {
+            width: 200px;
+            height: 200px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            color: #999;
+            text-align: center;
+            padding: 16px;
+            border: 1px solid #e0e0e0;
+        }
+
+        /* About Section */
+        .about {
+            margin-bottom: 80px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #0066cc;
+            display: inline-block;
+        }
+
+        .about-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #4a4a4a;
+            margin-bottom: 24px;
+        }
+
+        .about-text p {
+            margin-bottom: 16px;
+        }
+
+        .highlight {
+            color: #0066cc;
+            font-weight: 600;
+        }
+
+        /* Expertise Section */
+        .expertise {
+            margin-bottom: 80px;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .expertise-item {
+            padding: 24px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #0066cc;
+        }
+
+        .expertise-item h3 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0066cc;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .expertise-item p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            margin-bottom: 80px;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .contact-item {
+            padding: 24px;
+            background: #f0f4ff;
+            border-radius: 8px;
+            border: 1px solid #d0deff;
+        }
+
+        .contact-item h3 {
+            font-size: 13px;
+            font-weight: 600;
+            color: #0066cc;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .contact-item a,
+        .contact-item p {
+            font-size: 15px;
+            color: #2c3e50;
+            word-break: break-word;
+            text-decoration: none;
+        }
+
+        .contact-item a {
+            color: #0066cc;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .contact-item a:hover {
+            color: #0052a3;
+            text-decoration: underline;
+        }
+
+        /* Interests Section */
+        .interests {
+            margin-bottom: 80px;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 24px;
+            margin-top: 24px;
+        }
+
+        .interest-card {
+            padding: 28px 24px;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+            border-radius: 12px;
+            border: 1px solid #d0deff;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .interest-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 102, 204, 0.12);
+        }
+
+        .interest-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .interest-card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+
+        .interest-card p {
+            font-size: 13px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Recommendations Section */
+        .recommendations {
+            margin-bottom: 80px;
+        }
+
+        .recommendations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+            margin-top: 24px;
+        }
+
+        .recommendation-card {
+            padding: 28px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .recommendation-card:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .recommendation-text {
+            font-size: 14px;
+            color: #4a4a4a;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+            border-left: 3px solid #0066cc;
+            padding-left: 16px;
+        }
+
+        .recommendation-author {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .author-name {
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .author-title {
+            font-size: 12px;
+            color: #0066cc;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .stars {
+            color: #ffc107;
+            margin-bottom: 12px;
+            font-size: 14px;
+            letter-spacing: 2px;
+        }
+
+        /* Footer */
+        footer {
+            padding-top: 40px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                grid-template-columns: 1fr;
+                margin-bottom: 60px;
+            }
+
+            .photo-placeholder {
+                width: 150px;
+                height: 150px;
+                margin: 0 auto;
+            }
+
+            .header-content h1 {
+                font-size: 36px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            .expertise-grid,
+            .contact-info,
+            .interests-grid,
+            .recommendations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-content h1 {
+                font-size: 28px;
+            }
+
+            .header-content .tagline {
+                font-size: 16px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-content">
+                <h1>Ritesh Ranjan</h1>
+                <div class="tagline">Product Leader | B2B SaaS Expert | Strategic Thinker</div>
+                <div class="location">📍 Bangalore, India</div>
+            </div>
+            <div class="photo-placeholder">
+                Your photo here
+                <br><br>
+                (800x800 px recommended)
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section class="about">
+            <h2 class="section-title">About</h2>
+            <div class="about-text">
+                <p>I'm a strategic product executive with 20 years of leadership in Enterprise SaaS and Ecommerce. I build high-performing teams through <span class="highlight">mentorship and data-driven execution</span>, and I'm passionate about discovering and scaling products that deliver real customer value.</p>
+
+                <p>Currently, I work as a <span class="highlight">Fractional Head of Product</span>, partnering with founders at seed and series A startups to establish foundational product strategy, build initial product teams, and drive zero-to-one and one-to-N growth.</p>
+
+                <p>I've spent my career at the intersection of product vision and execution—at companies like <span class="highlight">Atlassian</span> (where I led Jira Migrations, contributing over $XXX million in recurring revenue) and <span class="highlight">Walmart</span> (where I launched initiatives generating $80 million+ in incremental revenue). I'm equally energized by founding my own ventures and exploring emerging opportunities in product, technology, and health.</p>
+            </div>
+        </section>
+
+        <!-- Expertise Section -->
+        <section class="expertise">
+            <h2 class="section-title">Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-item">
+                    <h3>Product Strategy</h3>
+                    <p>Zero-to-one product vision, portfolio management, and GTM strategy for B2B SaaS</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Team Leadership</h3>
+                    <p>Building and scaling high-performing product teams with focus on culture and mentorship</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Data-Driven Execution</h3>
+                    <p>User research, discovery processes, and validated feature development</p>
+                </div>
+                <div class="expertise-item">
+                    <h3>Stakeholder Management</h3>
+                    <p>Cross-functional alignment, executive communication, and organizational design</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interests & Hobbies Section -->
+        <section class="interests">
+            <h2 class="section-title">Interests & Hobbies</h2>
+            <div class="interests-grid">
+                <div class="interest-card">
+                    <span class="interest-icon">🏃</span>
+                    <h3>Sports</h3>
+                    <p>Avid runner and badminton player. Always looking for new trails and courts to explore.</p>
+                </div>
+                <div class="interest-card">
+                    <span class="interest-icon">✈️</span>
+                    <h3>Travel</h3>
+                    <p>Passionate about exploring new places and engaging with local cultures. Travelled to 25+ countries across 4 continents.</p>
+                </div>
+                <div class="interest-card">
+                    <span class="interest-icon">🎮</span>
+                    <h3>Edtech</h3>
+                    <p>Currently developing a gamified mobile learning app for young children (ages 4-6) with a focus on making education engaging.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations Section -->
+        <section class="recommendations">
+            <h2 class="section-title">What Others Say</h2>
+            <div class="recommendations-grid">
+                <div class="recommendation-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="recommendation-text">"Ritesh is a strategic thinker who excels at building product from the ground up. His ability to drive cross-functional alignment while maintaining product integrity is exceptional."</div>
+                    <div class="recommendation-author">
+                        <div class="author-name">Someone Here</div>
+                        <div class="author-title">CEO / Founder</div>
+                    </div>
+                </div>
+                <div class="recommendation-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="recommendation-text">"Working with Ritesh was transformative. He brought clarity to our product strategy and empowered our team to think bigger. His mentorship elevated the entire organization."</div>
+                    <div class="recommendation-author">
+                        <div class="author-name">Another Person</div>
+                        <div class="author-title">VP Product</div>
+                    </div>
+                </div>
+                <div class="recommendation-card">
+                    <div class="stars">★★★★★</div>
+                    <div class="recommendation-text">"Ritesh combines deep product expertise with genuine care for people. His data-driven approach and human-centered philosophy make him a rare product leader."</div>
+                    <div class="recommendation-author">
+                        <div class="author-name">Third Recommender</div>
+                        <div class="author-title">Director of Product</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <a href="mailto:riranjan@umich.edu">riranjan@umich.edu</a>
+                </div>
+                <div class="contact-item">
+                    <h3>Phone</h3>
+                    <p>+91 9741 657253</p>
+                </div>
+                <div class="contact-item">
+                    <h3>LinkedIn</h3>
+                    <a href="https://www.linkedin.com/in/ritesh--ranjan/" target="_blank">linkedin.com/in/ritesh--ranjan</a>
+                </div>
+                <div class="contact-item">
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/firstrites" target="_blank">github.com/firstrites</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2026 Ritesh Ranjan. Built with simplicity in mind.</p>
+        </footer>
+    </div>
+</body>
+</html>
