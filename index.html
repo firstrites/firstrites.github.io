@@ -7,7 +7,8 @@
 
     MAIN SECTIONS:
     - Header: Your name, tagline, location, and photo
-    - Tabs: About, Expertise, Projects, Interests, Recommendations, Contact
+    - Tabs: About, Expertise, Projects, Interests, Contact
+    - Interests includes: Hobbies/Interests cards + Product Recommendations list
 
     TO MODIFY CONTENT:
     1. Search for "HOW TO ADD" comments throughout the file - they explain how to add new items
@@ -182,11 +183,6 @@
             margin-bottom: 16px;
         }
 
-        .highlight {
-            color: #0066cc;
-            font-weight: 600;
-        }
-
         /* Expertise Section */
         .expertise {
             margin-bottom: 80px;
@@ -326,6 +322,33 @@
             font-size: 13px;
             color: #666;
             line-height: 1.5;
+        }
+
+        /* Product Recommendations List */
+        .products-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .product-recommendation {
+            padding: 16px;
+            background: #f9f9f9;
+            border-left: 3px solid #0066cc;
+            border-radius: 4px;
+        }
+
+        .product-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .product-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
         }
 
         /* Projects Section */
@@ -550,7 +573,6 @@
             <button class="tab-btn" data-tab="expertise">Expertise</button>
             <button class="tab-btn" data-tab="projects">Projects</button>
             <button class="tab-btn" data-tab="interests">Interests</button>
-            <button class="tab-btn" data-tab="recommendations">Recommendations</button>
             <button class="tab-btn" data-tab="contact">Contact</button>
         </div>
 
@@ -559,11 +581,11 @@
             <section class="about">
                 <h2 class="section-title">About Me</h2>
             <div class="about-text">
-                <p>I'm a strategic product executive with 20 years of leadership in Enterprise SaaS and Ecommerce. I build high-performing teams through <span class="highlight">mentorship and data-driven execution</span>, and I'm passionate about discovering and scaling products that deliver real customer value.</p>
+                <p>I'm a strategic product executive with 20 years of leadership in Enterprise SaaS and Ecommerce. I build high-performing teams through mentorship and data-driven execution, and I'm passionate about discovering and scaling products that deliver real customer value.</p>
 
-                <p>Currently, I work as a <span class="highlight">Fractional Head of Product</span>, partnering with founders at Seed and Series A startups to establish foundational product strategy, build initial product teams, and drive zero-to-one and one-to-N growth.</p>
+                <p>Currently, I work as a Fractional Head of Product, partnering with founders at Seed and Series A startups to establish foundational product strategy, build initial product teams, and drive zero-to-one and one-to-N growth.</p>
 
-                <p>I've spent my career at the intersection of product vision and execution—at companies like <span class="highlight">Atlassian</span> (where I led Jira Migrations, contributing over $XXX million in recurring revenue) and <span class="highlight">Walmart</span> (where I launched initiatives generating $XX million+ additional revenue). I'm equally energized by founding my own ventures and exploring emerging opportunities in product, technology, and sports and health.</p>
+                <p>I've spent my career at the intersection of product vision and execution—at companies like Atlassian (where I led Jira Migrations, contributing over $XXX million in recurring revenue) and Walmart (where I launched initiatives generating $XX million+ additional revenue). I'm equally energized by founding my own ventures and exploring emerging opportunities in product, technology, and sports and health.</p>
             </div>
             </section>
         </div>
@@ -648,71 +670,37 @@
                     <p>Currently developing a gamified mobile learning app for young children (ages 4-6) with a focus on making education engaging.</p>
                 </div>
             </div>
-            </section>
-        </div>
 
-        <!-- Tab: Recommendations
-             HOW TO ADD NEW RECOMMENDATIONS:
-             1. Copy the entire <div class="recommendation-card"> block below
-             2. Update the following fields:
-                - <div class="stars">: Change the number of ★ symbols (use ★ for filled stars)
-                - <div class="recommendation-text">: Replace with the actual recommendation quote
-                - <div class="author-name">: Replace with the person's name
-                - <div class="author-title">: Replace with their title/role
-             3. Paste the new block after the last recommendation-card
-             4. That's it! The styling will apply automatically.
+            <!-- Product Recommendations Section
+                 HOW TO ADD NEW PRODUCT RECOMMENDATIONS:
+                 1. Copy the entire <div class="product-recommendation"> block below
+                 2. Update the following fields:
+                    - <div class="product-name">: Name of the product/service
+                    - <div class="product-description">: Brief description of what it does
+                 3. Paste the new block in the products-list after the last product-recommendation
+                 4. That's it! The styling will apply automatically.
 
-             EXAMPLE:
-             <div class="recommendation-card">
-                 <div class="stars">★★★★★</div>
-                 <div class="recommendation-text">"Your recommendation text here..."</div>
-                 <div class="recommendation-author">
-                     <div class="author-name">John Doe</div>
-                     <div class="author-title">CEO at Company Name</div>
+                 EXAMPLE:
+                 <div class="product-recommendation">
+                     <div class="product-name">Product Name</div>
+                     <div class="product-description">A brief description of what this product does and why you recommend it.</div>
                  </div>
-             </div>
-        -->
-        <div id="recommendations" class="tab-content">
-            <section class="recommendations">
-                <h2 class="section-title">Recommendations</h2>
-            <div class="recommendations-grid">
-                <!-- RECOMMENDATION CARD #1 -->
-                <div class="recommendation-card">
-                    <div class="stars">★★★★★</div>
-                    <div class="recommendation-text">"Ritesh is a strategic thinker who excels at building product from the ground up. His ability to drive cross-functional alignment while maintaining product integrity is exceptional."</div>
-                    <div class="recommendation-author">
-                        <div class="author-name">Someone Here</div>
-                        <div class="author-title">CEO / Founder</div>
-                    </div>
+            -->
+            <h3 style="margin-top: 60px; margin-bottom: 24px; font-size: 18px; font-weight: 600; color: #1a1a1a; padding-bottom: 12px; border-bottom: 1px solid #e0e0e0;">Product Recommendations</h3>
+            <div class="products-list">
+                <!-- PRODUCT RECOMMENDATION #1 -->
+                <div class="product-recommendation">
+                    <div class="product-name">Example Product</div>
+                    <div class="product-description">A brief description of what this product does and why you recommend it.</div>
                 </div>
 
-                <!-- RECOMMENDATION CARD #2 -->
-                <div class="recommendation-card">
-                    <div class="stars">★★★★★</div>
-                    <div class="recommendation-text">"Working with Ritesh was transformative. He brought clarity to our product strategy and empowered our team to think bigger. His mentorship elevated the entire organization."</div>
-                    <div class="recommendation-author">
-                        <div class="author-name">Another Person</div>
-                        <div class="author-title">VP Product</div>
-                    </div>
-                </div>
-
-                <!-- RECOMMENDATION CARD #3 -->
-                <div class="recommendation-card">
-                    <div class="stars">★★★★★</div>
-                    <div class="recommendation-text">"Ritesh combines deep product expertise with genuine care for people. His data-driven approach and human-centered philosophy make him a rare product leader."</div>
-                    <div class="recommendation-author">
-                        <div class="author-name">Third Recommender</div>
-                        <div class="author-title">Director of Product</div>
-                    </div>
-                </div>
-
-                <!-- ADD MORE RECOMMENDATIONS HERE - Follow the template above -->
+                <!-- ADD MORE PRODUCT RECOMMENDATIONS HERE - Follow the template above -->
 
             </div>
             </section>
         </div>
 
-        <!-- Tab: Contact
+<!-- Tab: Contact
              HOW TO UPDATE CONTACT INFORMATION:
              1. Email: The email is masked for privacy. It's revealed when the user clicks the button.
                 To change it: Find the JavaScript section at the bottom and replace 'riranjan@umich.edu' with your email (2 places)
