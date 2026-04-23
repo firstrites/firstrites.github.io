@@ -1,4 +1,31 @@
 <!DOCTYPE html>
+<!--
+    PORTFOLIO WEBSITE - QUICK START GUIDE
+    =====================================
+
+    This is a responsive tab-based portfolio website. Follow the instructions below to customize it with your own content.
+
+    MAIN SECTIONS:
+    - Header: Your name, tagline, location, and photo
+    - Tabs: About, Expertise, Projects, Interests, Recommendations, Contact
+
+    TO MODIFY CONTENT:
+    1. Search for "HOW TO ADD" comments throughout the file - they explain how to add new items
+    2. For projects: Look for "HOW TO ADD NEW PROJECTS" comment
+    3. For recommendations: Look for "HOW TO ADD NEW RECOMMENDATIONS" comment
+    4. For contact info: Update the contact section at the bottom
+    5. For styling: CSS is in the <style> section at the top
+
+    COLORS:
+    - Primary color: #0066cc (blue)
+    - Background: #f9f7f4 (warm cream)
+    - Text: #2c3e50 (dark gray)
+
+    RESPONSIVE:
+    - Desktop: Full layout with 2+ column grids
+    - Tablet: Single column for grids, adjusted spacing
+    - Mobile: Optimized for small screens
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -495,7 +522,15 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header -->
+        <!-- HEADER SECTION
+             This appears at the top of every tab. Update these fields:
+             - <h1>: Your full name
+             - <div class="tagline">: Your professional tagline (appears in blue)
+             - <div class="location">: Your location with emoji
+             - Photo: Replace "Your photo here" text with an actual image by:
+               Option 1: Replace the photo-placeholder div with: <img src="path/to/photo.jpg" alt="Your Name" style="width: 200px; height: 200px; border-radius: 8px;">
+               Option 2: Add a background-image to .photo-placeholder in CSS
+        -->
         <div class="header-bar">
             <div>
                 <h1>Ritesh Ranjan</h1>
@@ -515,7 +550,7 @@
             <button class="tab-btn" data-tab="expertise">Expertise</button>
             <button class="tab-btn" data-tab="projects">Projects</button>
             <button class="tab-btn" data-tab="interests">Interests</button>
-            <button class="tab-btn" data-tab="testimonials">Testimonials</button>
+            <button class="tab-btn" data-tab="recommendations">Recommendations</button>
             <button class="tab-btn" data-tab="contact">Contact</button>
         </div>
 
@@ -558,16 +593,36 @@
             </section>
         </div>
 
-        <!-- Tab: Projects -->
+        <!-- Tab: Projects
+             HOW TO ADD NEW PROJECTS:
+             1. Copy the entire <div class="project-card"> block below
+             2. Update the following fields:
+                - <div class="project-name">: Your project name
+                - <div class="project-description">: Brief description of what the project does
+                - <a href="...">: Replace with your project URL (GitHub link, live demo, etc.)
+             3. Paste the new block after the last project-card inside the projects-grid
+             4. Cards will automatically arrange in a responsive grid (1-3 columns depending on screen size)
+
+             EXAMPLE:
+             <div class="project-card">
+                 <div class="project-name">My Awesome Project</div>
+                 <div class="project-description">This project does something amazing and helps solve real problems.</div>
+                 <a href="https://github.com/yourname/project" target="_blank" class="project-link">View on GitHub →</a>
+             </div>
+        -->
         <div id="projects" class="tab-content">
             <section class="projects">
                 <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
+                <!-- PROJECT CARD #1: Chrome Tab Summarizer -->
                 <div class="project-card">
                     <div class="project-name">Chrome Tab Summarizer</div>
                     <div class="project-description">A Chrome extension that intelligently summarizes open browser tabs, helping you organize and quickly understand your research across multiple pages.</div>
                     <a href="https://github.com/firstrites/Chrome-Tab-Summarizer" target="_blank" class="project-link">View on GitHub →</a>
                 </div>
+
+                <!-- ADD MORE PROJECTS HERE - Follow the template above -->
+
             </div>
             </section>
         </div>
@@ -596,11 +651,32 @@
             </section>
         </div>
 
-        <!-- Tab: Testimonials -->
-        <div id="testimonials" class="tab-content">
+        <!-- Tab: Recommendations
+             HOW TO ADD NEW RECOMMENDATIONS:
+             1. Copy the entire <div class="recommendation-card"> block below
+             2. Update the following fields:
+                - <div class="stars">: Change the number of ★ symbols (use ★ for filled stars)
+                - <div class="recommendation-text">: Replace with the actual recommendation quote
+                - <div class="author-name">: Replace with the person's name
+                - <div class="author-title">: Replace with their title/role
+             3. Paste the new block after the last recommendation-card
+             4. That's it! The styling will apply automatically.
+
+             EXAMPLE:
+             <div class="recommendation-card">
+                 <div class="stars">★★★★★</div>
+                 <div class="recommendation-text">"Your recommendation text here..."</div>
+                 <div class="recommendation-author">
+                     <div class="author-name">John Doe</div>
+                     <div class="author-title">CEO at Company Name</div>
+                 </div>
+             </div>
+        -->
+        <div id="recommendations" class="tab-content">
             <section class="recommendations">
-                <h2 class="section-title">What Others Say</h2>
+                <h2 class="section-title">Recommendations</h2>
             <div class="recommendations-grid">
+                <!-- RECOMMENDATION CARD #1 -->
                 <div class="recommendation-card">
                     <div class="stars">★★★★★</div>
                     <div class="recommendation-text">"Ritesh is a strategic thinker who excels at building product from the ground up. His ability to drive cross-functional alignment while maintaining product integrity is exceptional."</div>
@@ -609,6 +685,8 @@
                         <div class="author-title">CEO / Founder</div>
                     </div>
                 </div>
+
+                <!-- RECOMMENDATION CARD #2 -->
                 <div class="recommendation-card">
                     <div class="stars">★★★★★</div>
                     <div class="recommendation-text">"Working with Ritesh was transformative. He brought clarity to our product strategy and empowered our team to think bigger. His mentorship elevated the entire organization."</div>
@@ -617,6 +695,8 @@
                         <div class="author-title">VP Product</div>
                     </div>
                 </div>
+
+                <!-- RECOMMENDATION CARD #3 -->
                 <div class="recommendation-card">
                     <div class="stars">★★★★★</div>
                     <div class="recommendation-text">"Ritesh combines deep product expertise with genuine care for people. His data-driven approach and human-centered philosophy make him a rare product leader."</div>
@@ -625,31 +705,60 @@
                         <div class="author-title">Director of Product</div>
                     </div>
                 </div>
+
+                <!-- ADD MORE RECOMMENDATIONS HERE - Follow the template above -->
+
             </div>
             </section>
         </div>
 
-        <!-- Tab: Contact -->
+        <!-- Tab: Contact
+             HOW TO UPDATE CONTACT INFORMATION:
+             1. Email: The email is masked for privacy. It's revealed when the user clicks the button.
+                To change it: Find the JavaScript section at the bottom and replace 'riranjan@umich.edu' with your email (2 places)
+
+             2. Phone: Simply replace "+91 9741 657253" with your phone number
+
+             3. Social Links: Update the href and link text for each social platform:
+                - LinkedIn: Update the href URL and link text
+                - GitHub: Update the href URL and link text
+
+             4. Add more contacts: Copy a contact-item block and create a new one:
+                <div class="contact-item">
+                    <h3>Twitter</h3>
+                    <a href="https://twitter.com/yourhandle" target="_blank">@yourhandle</a>
+                </div>
+        -->
         <div id="contact" class="tab-content">
             <section class="contact">
                 <h2 class="section-title">Get in Touch</h2>
             <div class="contact-info">
+                <!-- Email (click to reveal) -->
                 <div class="contact-item">
                     <h3>Email</h3>
                     <button id="email-btn" class="email-button">Click to reveal email</button>
                 </div>
+
+                <!-- Phone -->
                 <div class="contact-item">
                     <h3>Phone</h3>
                     <p>+91 9741 657253</p>
                 </div>
+
+                <!-- LinkedIn -->
                 <div class="contact-item">
                     <h3>LinkedIn</h3>
                     <a href="https://www.linkedin.com/in/ritesh--ranjan/" target="_blank">linkedin.com/in/ritesh--ranjan</a>
                 </div>
+
+                <!-- GitHub -->
                 <div class="contact-item">
                     <h3>GitHub</h3>
                     <a href="https://github.com/firstrites" target="_blank">github.com/firstrites</a>
                 </div>
+
+                <!-- ADD MORE CONTACT OPTIONS HERE - Follow the pattern above -->
+
             </div>
             </section>
         </div>
