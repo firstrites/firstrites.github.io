@@ -25,21 +25,21 @@
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
-        /* Header Section */
-        .header {
+        /* Header */
+        .header-bar {
             display: grid;
             grid-template-columns: 1fr 200px;
             gap: 40px;
             align-items: start;
-            margin-bottom: 80px;
-            padding-bottom: 60px;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
             border-bottom: 1px solid #e0e0e0;
         }
 
-        .header-content h1 {
+        .header-bar h1 {
             font-size: 48px;
             font-weight: 600;
             margin-bottom: 12px;
@@ -47,14 +47,14 @@
             letter-spacing: -0.5px;
         }
 
-        .header-content .tagline {
+        .header-bar .tagline {
             font-size: 18px;
             color: #0066cc;
             margin-bottom: 24px;
             font-weight: 500;
         }
 
-        .header-content .location {
+        .header-bar .location {
             font-size: 14px;
             color: #666;
             margin-bottom: 20px;
@@ -77,6 +77,57 @@
             padding: 16px;
             border: 1px solid #e0e0e0;
         }
+
+        /* Tabs Navigation */
+        .tabs-nav {
+            display: flex;
+            gap: 0;
+            border-bottom: 2px solid #e0e0e0;
+            margin-bottom: 40px;
+            overflow-x: auto;
+        }
+
+        .tab-btn {
+            padding: 16px 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+            color: #666;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .tab-btn:hover {
+            color: #0066cc;
+        }
+
+        .tab-btn.active {
+            color: #0066cc;
+            border-bottom-color: #0066cc;
+        }
+
+        /* Tab Content */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
 
         /* About Section */
         .about {
@@ -308,9 +359,9 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .header {
+            .header-bar {
                 grid-template-columns: 1fr;
-                margin-bottom: 60px;
+                margin-bottom: 40px;
             }
 
             .photo-placeholder {
@@ -319,12 +370,22 @@
                 margin: 0 auto;
             }
 
-            .header-content h1 {
+            .header-bar h1 {
                 font-size: 36px;
             }
 
             .container {
-                padding: 40px 20px;
+                padding: 20px;
+            }
+
+            .tabs-nav {
+                gap: 0;
+                margin-bottom: 30px;
+            }
+
+            .tab-btn {
+                padding: 12px 16px;
+                font-size: 14px;
             }
 
             .expertise-grid,
@@ -336,16 +397,25 @@
         }
 
         @media (max-width: 480px) {
-            .header-content h1 {
+            .header-bar h1 {
                 font-size: 28px;
             }
 
-            .header-content .tagline {
+            .header-bar .tagline {
                 font-size: 16px;
             }
 
             .section-title {
                 font-size: 20px;
+            }
+
+            .tabs-nav {
+                gap: 0;
+            }
+
+            .tab-btn {
+                padding: 12px 14px;
+                font-size: 13px;
             }
         }
     </style>
@@ -353,8 +423,8 @@
 <body>
     <div class="container">
         <!-- Header -->
-        <div class="header">
-            <div class="header-content">
+        <div class="header-bar">
+            <div>
                 <h1>Ritesh Ranjan</h1>
                 <div class="tagline">Product Leader | B2B SaaS Expert | Strategic Thinker</div>
                 <div class="location">📍 Bangalore, India</div>
@@ -366,9 +436,19 @@
             </div>
         </div>
 
-        <!-- About Section -->
-        <section class="about">
-            <h2 class="section-title">About</h2>
+        <!-- Tab Navigation -->
+        <div class="tabs-nav">
+            <button class="tab-btn active" data-tab="about">About</button>
+            <button class="tab-btn" data-tab="expertise">Expertise</button>
+            <button class="tab-btn" data-tab="interests">Interests</button>
+            <button class="tab-btn" data-tab="testimonials">Testimonials</button>
+            <button class="tab-btn" data-tab="contact">Contact</button>
+        </div>
+
+        <!-- Tab: About -->
+        <div id="about" class="tab-content active">
+            <section class="about">
+                <h2 class="section-title">About Me</h2>
             <div class="about-text">
                 <p>I'm a strategic product executive with 20 years of leadership in Enterprise SaaS and Ecommerce. I build high-performing teams through <span class="highlight">mentorship and data-driven execution</span>, and I'm passionate about discovering and scaling products that deliver real customer value.</p>
 
@@ -376,11 +456,13 @@
 
                 <p>I've spent my career at the intersection of product vision and execution—at companies like <span class="highlight">Atlassian</span> (where I led Jira Migrations, contributing over $XXX million in recurring revenue) and <span class="highlight">Walmart</span> (where I launched initiatives generating $XX million+ additional revenue). I'm equally energized by founding my own ventures and exploring emerging opportunities in product, technology, and sports and health.</p>
             </div>
-        </section>
+            </section>
+        </div>
 
-        <!-- Expertise Section -->
-        <section class="expertise">
-            <h2 class="section-title">Expertise</h2>
+        <!-- Tab: Expertise -->
+        <div id="expertise" class="tab-content">
+            <section class="expertise">
+                <h2 class="section-title">Expertise</h2>
             <div class="expertise-grid">
                 <div class="expertise-item">
                     <h3>Product Strategy</h3>
@@ -399,11 +481,13 @@
                     <p>Cross-functional alignment, executive communication, and organizational design</p>
                 </div>
             </div>
-        </section>
+            </section>
+        </div>
 
-        <!-- Interests & Hobbies Section -->
-        <section class="interests">
-            <h2 class="section-title">Interests & Hobbies</h2>
+        <!-- Tab: Interests -->
+        <div id="interests" class="tab-content">
+            <section class="interests">
+                <h2 class="section-title">Interests & Hobbies</h2>
             <div class="interests-grid">
                 <div class="interest-card">
                     <span class="interest-icon">🏃</span>
@@ -421,11 +505,13 @@
                     <p>Currently developing a gamified mobile learning app for young children (ages 4-6) with a focus on making education engaging.</p>
                 </div>
             </div>
-        </section>
+            </section>
+        </div>
 
-        <!-- Recommendations Section -->
-        <section class="recommendations">
-            <h2 class="section-title">What Others Say</h2>
+        <!-- Tab: Testimonials -->
+        <div id="testimonials" class="tab-content">
+            <section class="recommendations">
+                <h2 class="section-title">What Others Say</h2>
             <div class="recommendations-grid">
                 <div class="recommendation-card">
                     <div class="stars">★★★★★</div>
@@ -452,11 +538,13 @@
                     </div>
                 </div>
             </div>
-        </section>
+            </section>
+        </div>
 
-        <!-- Contact Section -->
-        <section class="contact">
-            <h2 class="section-title">Get in Touch</h2>
+        <!-- Tab: Contact -->
+        <div id="contact" class="tab-content">
+            <section class="contact">
+                <h2 class="section-title">Get in Touch</h2>
             <div class="contact-info">
                 <div class="contact-item">
                     <h3>Email</h3>
@@ -475,12 +563,35 @@
                     <a href="https://github.com/firstrites" target="_blank">github.com/firstrites</a>
                 </div>
             </div>
-        </section>
+            </section>
+        </div>
 
         <!-- Footer -->
         <footer>
             <p>&copy; 2026 Ritesh Ranjan. Built with simplicity in mind.</p>
         </footer>
     </div>
+
+    <script>
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tabName = btn.getAttribute('data-tab');
+
+                // Hide all tabs
+                document.querySelectorAll('.tab-content').forEach(tab => {
+                    tab.classList.remove('active');
+                });
+
+                // Remove active class from all buttons
+                document.querySelectorAll('.tab-btn').forEach(b => {
+                    b.classList.remove('active');
+                });
+
+                // Show selected tab
+                document.getElementById(tabName).classList.add('active');
+                btn.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
